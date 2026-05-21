@@ -1,0 +1,576 @@
+
+
+<html>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Travoly Tours Egypt</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #f4f7fb;
+      color: #222;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* ================= HEADER ================= */
+
+    header {
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(0, 0, 0, .60), rgba(0, 0, 0, .60)),
+        url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=1800&auto=format&fit=crop');
+
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .hero {
+      width: 100%;
+      max-width: 850px;
+      color: white;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 25px;
+      letter-spacing: 1px;
+    }
+
+    .hero h1 {
+      font-size: 64px;
+      line-height: 1.3;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 22px;
+      line-height: 1.9;
+      margin-bottom: 35px;
+      color: #f1f1f1;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 16px 32px;
+      border-radius: 50px;
+      font-size: 18px;
+      font-weight: bold;
+      transition: .3s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: #00bcd4;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #0097a7;
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      border: 2px solid white;
+      color: white;
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: #111;
+    }
+
+    /* ================= SECTION ================= */
+
+    .section {
+      padding: 80px 7%;
+    }
+
+    .title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .title h2 {
+      font-size: 42px;
+      margin-bottom: 15px;
+      color: #0f172a;
+    }
+
+    .title p {
+      color: #666;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    /* ================= HOTEL CARDS ================= */
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+      transition: .3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 22px;
+    }
+
+    .card-content h3 {
+      font-size: 26px;
+      margin-bottom: 14px;
+      color: #0f172a;
+    }
+
+    .card-content p {
+      color: #666;
+      line-height: 1.8;
+      margin-bottom: 18px;
+      font-size: 15px;
+    }
+
+    .price {
+      font-size: 30px;
+      font-weight: bold;
+      color: #00bcd4;
+      margin-bottom: 18px;
+    }
+
+    .book-btn {
+      width: 100%;
+      display: inline-block;
+      text-align: center;
+      background: #0f172a;
+      color: white;
+      padding: 14px;
+      border-radius: 12px;
+      transition: .3s;
+      font-weight: bold;
+    }
+
+    .book-btn:hover {
+      background: #020617;
+    }
+
+    /* ================= FEATURES ================= */
+
+    .features {
+      background: #0f172a;
+      color: white;
+    }
+
+    .features .title h2 {
+      color: white;
+    }
+
+    .features .title p {
+      color: #cbd5e1;
+    }
+
+    .features-boxes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+    }
+
+    .feature {
+      background: #1e293b;
+      padding: 30px 20px;
+      border-radius: 20px;
+      text-align: center;
+      transition: .3s;
+    }
+
+    .feature:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature h3 {
+      margin-bottom: 15px;
+      font-size: 24px;
+    }
+
+    .feature p {
+      color: #d1d5db;
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    /* ================= CONTACT ================= */
+
+    .contact {
+      text-align: center;
+      background: white;
+    }
+
+    .contact-box {
+      max-width: 700px;
+      margin: auto;
+      background: #0f172a;
+      color: white;
+      padding: 50px 25px;
+      border-radius: 30px;
+    }
+
+    .contact-box h2 {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    .contact-box p {
+      line-height: 1.8;
+      margin-bottom: 30px;
+      color: #ddd;
+      font-size: 18px;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      background: #020617;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      font-size: 15px;
+    }
+
+    /* ================= MOBILE ================= */
+
+    @media (max-width: 768px) {
+
+      header {
+        min-height: auto;
+        padding: 90px 20px;
+      }
+
+      .hero h1 {
+        font-size: 38px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .btn {
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .title h2 {
+        font-size: 30px;
+      }
+
+      .card-content h3 {
+        font-size: 22px;
+      }
+
+      .price {
+        font-size: 26px;
+      }
+
+      .contact-box h2 {
+        font-size: 30px;
+      }
+
+      .contact-box p {
+        font-size: 16px;
+      }
+
+    }
+
+    @media (max-width: 480px) {
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .section {
+        padding: 60px 5%;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+
+  <header>
+
+    <div class="hero">
+
+      <div class="logo">
+        Travoly Tours Egypt
+      </div>
+
+      <h1>
+        أقوى عروض شرم الشيخ بأسعار خرافية
+      </h1>
+
+      <p>
+        احجز أفضل الفنادق والإقامات الفاخرة في شرم الشيخ
+        واستمتع بعروض حصرية وخصومات قبل العيد.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="#hotels" class="btn btn-primary">
+          شوف العروض
+        </a>
+
+        <a href="https://wa.me/201040925954" class="btn btn-outline">
+          واتساب
+        </a>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <!-- HOTELS -->
+
+  <section class="section" id="hotels">
+
+    <div class="title">
+      <h2>أفضل الفنادق</h2>
+
+      <p>
+        عروض مختارة بعناية تناسب كل الميزانيات
+      </p>
+    </div>
+
+    <div class="cards">
+
+      <!-- CARD -->
+
+      <div class="card">
+
+        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="card-content">
+
+          <h3>Royal Naama Bay</h3>
+
+          <p>
+            إقامة مميزة بالقرب من خليج نعمة
+            مع حمامات سباحة وخدمة ممتازة.
+          </p>
+
+          <div class="price">
+            2950 جنيه
+          </div>
+
+          <a href="https://wa.me/201040925954" class="book-btn">
+            احجز الآن
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+
+      <div class="card">
+
+        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="card-content">
+
+          <h3>Falcon Hills</h3>
+
+          <p>
+            فندق هادئ مع شاطئ خاص
+            وخدمات ممتازة للعائلات.
+          </p>
+
+          <div class="price">
+            3200 جنيه
+          </div>
+
+          <a href="https://wa.me/201040925954" class="book-btn">
+            احجز الآن
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+
+      <div class="card">
+
+        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="card-content">
+
+          <h3>Turquoise Beach</h3>
+
+          <p>
+            إطلالة ساحرة على البحر الأحمر
+            وخدمة فندقية فاخرة.
+          </p>
+
+          <div class="price">
+            3500 جنيه
+          </div>
+
+          <a href="https://wa.me/201000000000" class="book-btn">
+            احجز الآن
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FEATURES -->
+
+  <section class="section features">
+
+    <div class="title">
+
+      <h2>ليه تختارنا ؟</h2>
+
+      <p>
+        لأننا بنوفر أفضل خدمة بأفضل سعر
+      </p>
+
+    </div>
+
+    <div class="features-boxes">
+
+      <div class="feature">
+        <h3>أسعار قوية</h3>
+
+        <p>
+          خصومات مستمرة على أشهر فنادق شرم الشيخ.
+        </p>
+      </div>
+
+      <div class="feature">
+        <h3>حجز سريع</h3>
+
+        <p>
+          تأكيد فوري للحجز وخدمة عملاء ممتازة.
+        </p>
+      </div>
+
+      <div class="feature">
+        <h3>فنادق متنوعة</h3>
+
+        <p>
+          اختيارات تناسب كل الميزانيات والأذواق.
+        </p>
+      </div>
+
+      <div class="feature">
+        <h3>دعم كامل</h3>
+
+        <p>
+          متابعة معاك قبل وأثناء الرحلة.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section class="section contact">
+
+    <div class="contact-box">
+
+      <h2>
+        احجز رحلتك دلوقتي
+      </h2>
+
+      <p>
+        كلمنا على واتساب واحصل على أفضل عروض شرم الشيخ
+        قبل انتهاء الخصومات.
+      </p>
+
+      <a href="https://wa.me/201000000000" class="btn btn-primary">
+        تواصل واتساب
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 Travoly Tours Egypt - جميع الحقوق محفوظة
+  </footer>
+
+</body>
+
+</html>
